@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
         if (gameover == false)
         {
             TestLetter(letter, button);
-            //Debug.Log(letter);
         }
         button.interactable = false;
     }
@@ -82,8 +81,6 @@ public class GameManager : MonoBehaviour
             nbrEssais--;
             ihm.SetDisplayScore(nbrEssais);
             hangman.SetHangman(nbrEssais);
-            //Debug.Log(nbrEssais);
-
         }
         else if (IsLetterPresent)
         {
@@ -121,17 +118,15 @@ public class GameManager : MonoBehaviour
             if (wordToGuess.word[i] == letter[0])
             {
                 IsLetterPresent = true;
-                //Debug.Log(IsLetterPresent);
             }
         }
-
-        //Debug.Log(IsLetterPresent);
         SetWordToDisplay(letter[0]);
         Result(IsLetterPresent);
         ChangeButtonColor(button, IsLetterPresent);
     }
 
-    // méthode pour changer la couleur des bouttons du clavier virtuel en vérifiant si la lettre est présente dans le wordToGuess
+    /* méthode pour changer la couleur des bouttons du clavier virtuel
+    en vérifiant si la lettre est présente dans le wordToGuess*/
     private void ChangeButtonColor(Button button, bool IsLetterPresent)
     {
         var colorBlock = button.colors;

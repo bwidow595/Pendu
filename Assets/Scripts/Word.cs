@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Word
 {
-    //constructeur word liste de mots
     public string word;
 
     public int length;
-
+    //constructeur word liste de mots
     public Word(string value)
     {
         word = value;

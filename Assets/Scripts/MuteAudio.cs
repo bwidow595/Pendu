@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class MuteAudio : MonoBehaviour
@@ -11,12 +12,9 @@ public class MuteAudio : MonoBehaviour
 
     private bool isMute;
 
-    
-
     void Start()
     {
         source = GetComponent<AudioSource>();
-        Mute();
     }
 
     //fonction pour activer/désactiver le son
@@ -36,7 +34,7 @@ public class MuteAudio : MonoBehaviour
 
     public void Mute()
     {
-        isMute = (PlayerPrefs.GetInt("mute audio") != 0);
+        isMute = (PlayerPrefs.GetInt("mute audio") !=0);
         source.mute = isMute;
     }
 }

@@ -1,27 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using static Unity.VisualScripting.Member;
 
 public class MainMenu : MonoBehaviour
 {
-    
-    //fonction pour changer de scène et activer le jeu
+    //fonction pour retourner au main menu(nom scène)
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
+    //fonction pour changer de scène et activer le jeu (index)
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-      
 
     }
     //fonction pour quitter le jeu
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit game");
     }
 }
